@@ -216,6 +216,7 @@ const Pay = () => {
                           <div className='text-[#000000] font-normal text-sm '>Balance :&nbsp;&nbsp;{balanceToken}</div>
                         </div>
                       </div>
+
                       <div className={style.info}>
                         <div className={style.infoLeft}>
                           <div className='text-[#000000] font-normal text-sm mt-4'>Friend's Email:</div>

@@ -10,7 +10,28 @@ import toast, { Toaster } from "react-hot-toast";
 import Footer from "../components/menu/Footer";
 import Html5QrcodePlugin from "../components/HTML5QrcodePlugin.jsx";
 import Header from "../components/menu/header";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import InputIcon from '../components/InputIcon.tsx'
+import { FaBackspace, FaMoneyBillWave } from "react-icons/fa";
 
+const style = {
+    wrapper: `relative`,
+    info: `flex justify-between text-[#e4e8eb] drop-shadow-xl`,
+    infoLeft: `flex-0.2 flex-wrap`,
+    container: `flex flex-wrap before:content-[''] before:bg-red-500 before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-gradient-to-b from-purple-600 to-blue-300 before:bg-cover before:bg-center before:bg-fixed before:opacity-100`,
+    contentWrapper: `w-full m-4 h-screen relative justify-center flex-wrap items-center block flex-grow lg:flex lg:items-center lg:w-auto`,
+    center: ` h-screen relative justify-center flex-wrap items-center `,
+    searchBar: `flex flex-1 w-full border-black items-center bg-[#faf9f7] rounded-[0.8rem] mt-2`,
+    searchInput: `h-[2.6rem] w-full border-0 bg-transparent outline-0 ring-0 px-2 pl-0 text-[#000000] placeholder:text-[#5e5d5b] placeholder:text-sm`,
+    copyContainer: `flex flex-1 w-full border-black items-center bg-[#faf9f7] rounded-[0.8rem]`,
+    title: `relative text-black justify-center text-2xl lg:text-[46px] font-semibold`,
+    description: `text-[#000000] container-[400px] text-lg lg:text-lg mt-[0.8rem] mb-[2.5rem]`,
+    spinner: `w-full h-screen flex justify-center text-white mt-20 p-100 object-center`,
+    nftButton: `font-bold w-full mt-4 bg-[#43058f] text-white text-lg rounded-xl p-3  shadow-lg hover:bg-[#6f41b7] cursor-pointer`,
+    dropDown: `font-bold w-full mt-4 bg-[#2181e2] text-white text-sm lg:text-lg rounded p-4 shadow-sm cursor-pointer`,
+    option: `font-bold w-1/2 lg:w-full mt-4 bg-[#2181e2] text-white text-sm lg:text-lg rounded p-4 shadow-lg cursor-pointer`,
+    glowDivBox: `relative group w-full lg:w-[40%] mt-30 rounded-2xl `,
+};
 const GlobalStyles = createGlobalStyle`
   header#myHeader.navbar.sticky.white {
     background: #403f83;
@@ -53,7 +74,7 @@ const defaults = {
 const QrPay = () => {
     const [scanResultWebCam, setScanResultWebCam] = useState(null);
     const [formInput, updateFormInput] = useState({ amount: 0 });
-    const { activeChain } = useNetwork();
+    const { chain, chains } = useNetwork();
     const [paymentHelper, setPaymentHelper] = useState(PaymentHelper());
     const [balanceToken, setBalanceToken] = useState(defaults.balanceToken);
     // const [selectedToken, setSelectedToken] = useState<TokenInfo | undefined>()
@@ -70,10 +91,10 @@ const QrPay = () => {
     }, [defaultAccount]);
 
     useEffect(() => {
-        paymentHelper.connectWallet(activeChain);
+        paymentHelper.connectWallet(chain);
         setAvailableTokens(paymentHelper.data().availableTokens);
         console.log("token", paymentHelper.data().availableTokens);
-    }, [activeChain]);
+    }, [chain]);
 
     async function fetchDetails(address) {
         setLoadingState(true);
@@ -127,63 +148,45 @@ const QrPay = () => {
             <GlobalStyles />
             <Toaster position="top-center" reverseOrder={false} />
             <Header />
-
-            <div className="row">
-                <div className="col-md-8 offset-md-2">
-                    <h3>Start sending payments immediately.</h3>
-                    <p>
-                        Scan your friend's QR code here and send cryptocurrency almost
-                        instantly.
-                    </p>
-                    <div className="spacer-10"></div>
-                    {!activeChain?.id ? (
-                        <BusyLoader
-                            loaderType={LoaderType.Ring}
-                            color={"#ffffff"}
-                            size={50}
-                        >
-                            <b>Click on the Connect Wallet button !!</b>
-                        </BusyLoader>
-                    ) : !scanResultWebCam ? (
-                        <Html5QrcodePlugin
-                            fps={10}
-                            qrbox={250}
-                            disableFlip={false}
-                            qrCodeSuccessCallback={onNewScanResult}
-                        />
-                    ) : (
-                        <>
-                            <form
-                                name="contactForm"
-                                className="form-border"
-                                onSubmit={transfer}
-                            >
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <div className="field-set">
-                                            <label>Name</label>
-                                            <p className="form-control"> {walletName}</p>
-                                        </div>
+            <div className={style.wrapper}>
+                <div className={style.container}>
+                    <div className={style.contentWrapper}>
+                        <div className={style.glowDivBox}>
+                            <div className="relative h-[full] w-[95%] text-center justify-center  divide-x divide-gray-600 rounded-lg bg-gradient-to-b from-purple-300 to-blue-200 px-7  py-9 leading-none lg:w-full">
+                                {!chain?.id ? (
+                                    <div className="flex flex-wrap text-center mx-auto">
+                                        <ConnectButton label="Connect Your Wallet And Start Sending Crypto" />
                                     </div>
-
-                                    <div className="col-md-6">
-                                        <div className="field-set">
-                                            <label>Wallet Address:</label>
-                                            <p className="form-control">
-                                                {" "}
-                                                {ellipseAddress(scanResultWebCam, 15)}
-                                            </p>
+                                ) : !scanResultWebCam ? (
+                                    <Html5QrcodePlugin
+                                        fps={10}
+                                        qrbox={250}
+                                        disableFlip={false}
+                                        qrCodeSuccessCallback={onNewScanResult}
+                                    />
+                                ) : (
+                                    <>
+                                        <div className={style.details}>
+                                            <span className="flex flex-wrap justify-center space-x-5">
+                                                <span className="pr-6 text-xl text-black font-bold lg:text-3xl">Send Crypto</span>
+                                            </span>
+                                            <span className="flex flex-wrap justify-center items-center space-x-5">
+                                                <span className="mt-4 text-[#111111] font-sans not-italic text-base leading-5 text-center justify-center mb-3">
+                                                    Choose a Cyptocurrency and send it
+                                                </span>
+                                            </span>
                                         </div>
-                                    </div>
 
-                                    <div className="col-md-6">
-                                        <div className="field-set">
-                                            <label>Choose the currency</label>
-
+                                        <div className="font-bold drop-shadow-xl">
+                                            <div className={style.info}>
+                                                <div className={style.infoLeft}>
+                                                    <div className='text-[#000000] font-normal text-sm mt-4 mb-2'>Choose Cryptocurrency:</div>
+                                                </div>
+                                            </div>
                                             <Select
                                                 placeholder="Select Your Token"
                                                 value={selectedOption}
-                                                options={getTokenByChain(activeChain?.id)}
+                                                options={getTokenByChain(chain?.id)}
                                                 onChange={handleChange}
                                                 getOptionLabel={(e) => (
                                                     <div
@@ -199,71 +202,79 @@ const QrPay = () => {
                                                     </div>
                                                 )}
                                             />
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-6">
-                                        <div className="field-set">
-                                            <label>Amount to Transfer</label>
-                                            <input
-                                                className="form-control"
-                                                id="myInput"
-                                                wrapperClass="flex flex-1 mx-[0.8rem] w-max-[520px] items-center bg-[#363840] rounded-[0.8rem] mt-2 p-1"
-                                                placeholder="Amount to transfer"
-                                                onChange={(e) => {
-                                                    updateFormInput({
-                                                        ...formInput,
-                                                        amount: Number(e.target.value),
-                                                    });
-                                                }}
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className=" mt-4 grid grid-cols-3 gap-2">
-                                        <div>Available Balance: {balanceToken}</div>
-                                    </div>
-                                    <div className=" mt-4 grid grid-cols-2 gap-1">
-                                        <div className="col-md-6">
-                                            <div className="field-set"></div>
-                                        </div>
-                                    </div>
-                                    <div className="clearfix"></div>
-                                    {loadingState === true ? (
-                                        <BusyLoader
-                                            loaderType={LoaderType.Beat}
-                                            wrapperClass="white-busy-container"
-                                            className="white-busy-container"
-                                            color={"#000000"}
-                                            size={15}
-                                        >
-                                            Connecting to blockchain. Please wait
-                                        </BusyLoader>
-                                    ) : (
-                                        <div className="col-md-15 offset-md-5">
-                                            {
-                                                <div>
-                                                    <button onClick={() => transfer()}>
-                                                        <div className="col-md-12">
-                                                            <div id="submit" className="pull-left">
-                                                                <input
-                                                                    type="submit"
-                                                                    id="send_message"
-                                                                    value="Tranfer"
-                                                                    className=" btn-main color-2"
-                                                                />
-                                                            </div>
-                                                            <div className="clearfix"></div>
-                                                        </div>
-                                                    </button>
+                                            <div className={style.info}>
+                                                <div className={style.infoLeft}>
+                                                    <div className='text-[#000000] font-normal text-sm '>Balance :&nbsp;&nbsp;{balanceToken}</div>
                                                 </div>
-                                            }
+                                            </div>
+
+                                            <div className={style.info}>
+                                                <div className={style.infoLeft}>
+                                                    <div className='text-[#000000] font-normal text-sm mt-4'>Friend's Wallet:</div>
+                                                </div>
+                                            </div>
+                                            <div className={style.searchBar}>
+                                                <input
+                                                    className={style.searchInput}
+                                                    value={scanResultWebCam}
+                                                    disabled
+                                                />
+                                            </div>
+
+
+                                            <div className={style.info}>
+                                                <div className={style.infoLeft}>
+                                                    <div className='text-[#000000] font-normal text-sm mt-4'>Amount To Transfer:</div>
+                                                </div>
+                                            </div>
+                                            <div className={style.searchBar}>
+                                                <InputIcon className="input-icon" Icon={FaMoneyBillWave} />
+                                                <input
+                                                    type="number"
+                                                    className={style.searchInput}
+                                                    placeholder="Amount to transfer"
+                                                    value={formInput.amount}
+                                                    onChange={(e) =>
+                                                        updateFormInput((formInput) => ({
+                                                            ...formInput,
+                                                            amount: Number(e.target.value),
+                                                        }))
+                                                    }
+                                                />
+                                                <button
+                                                    type="button"
+                                                    onClick={(_) =>
+                                                        updateFormInput((formInput) => ({
+                                                            ...formInput,
+                                                            amount: 0.0,
+                                                        }))
+                                                    }
+                                                >
+                                                    <InputIcon className="input-icon" Icon={FaBackspace} />
+                                                </button>
+                                            </div>
+
+                                            {loadingState === true ? (
+                                                <BusyLoader
+                                                    loaderType={LoaderType.Beat}
+                                                    wrapperClass="white-busy-container"
+                                                    className="white-busy-container"
+                                                    color={"#000000"}
+                                                    size={15}
+                                                >
+                                                    <div className={style.description}> Connecting to blockchain. Please wait</div>
+                                                </BusyLoader>
+                                            ) : (
+                                                <button type="submit" onClick={transfer} className={style.nftButton}>
+                                                    Transfer
+                                                </button>
+                                            )}
                                         </div>
-                                    )}
-                                </div>
-                            </form>
-                        </>
-                    )}
+                                    </>
+                                )}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
