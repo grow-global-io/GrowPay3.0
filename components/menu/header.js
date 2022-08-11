@@ -4,7 +4,7 @@ import Breakpoint, {
   BreakpointProvider,
   setDefaultBreakpoints,
 } from "react-socks";
-import Link from "next/link";
+import { Link } from "@reach/router";
 import useOnclickOutside from "react-cool-onclickoutside";
 import { CgProfile } from "react-icons/cg";
 import { FcSettings } from "react-icons/fc";
@@ -19,6 +19,19 @@ import { getConfigByChain } from "../../config";
 import Web3Modal from "web3modal";
 
 setDefaultBreakpoints([{ xs: 0 }, { l: 1199 }, { xl: 1200 }]);
+
+const NavLink = (props) => (
+  <Link
+    {...props}
+    getProps={({ isCurrent }) => {
+      // the object returned here is passed to the
+      // anchor element's props
+      return {
+        className: isCurrent ? "active" : "non-active",
+      };
+    }}
+  />
+);
 
 const Header = function () {
   const [openMenu, setOpenMenu] = React.useState(false);
@@ -106,17 +119,17 @@ const Header = function () {
         <div className="row w-100-nav">
           <div className="logo px-0">
             <div className="navbar-title navbar-item">
-              <Link href="/">
-                <div className="h-10 w-10">
+              <NavLink to="/">
+                <div className="">
                   <img
-                    width={50}
-                    height={50}
-                    src="./img/logos.png"
+                    width={100}
+                    height={100}
+                    src="./img/GLLLogo.png"
                     //className="img-fluid d-none"
                     alt="#"
                   />
                 </div>
-              </Link>
+              </NavLink>
             </div>
           </div>
 
@@ -125,21 +138,35 @@ const Header = function () {
               {showmenu && (
                 <div className="menu">
                   <div className="navbar-item">
-                    <Link href="/" onClick={() => btn_icon(!showmenu)}>
-                      Home
-                    </Link>
+                    <div ref={ref}>
+                      <div
+                        className="dropdown-custom dropdown-toggle btn"
+                        onClick={handleBtnClick}
+                      >
+                        Home
+                      </div>
+                      {openMenu && (
+                        <div className="item-dropdown">
+                          <div className="dropdown" onClick={closeMenu}>
+                            <NavLink to="/" onClick={() => btn_icon(!showmenu)}>
+                              Homepage
+                            </NavLink>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   <div className="navbar-item">
-                    <Link href="/register" onClick={() => btn_icon(!showmenu)}>
+                    <NavLink to="/register" onClick={() => btn_icon(!showmenu)}>
                       Link Wallet
-                    </Link>
+                    </NavLink>
                   </div>
                   {address === admin && address ? (
                     <div className="navbar-item">
-                      <Link href="/admin" onClick={() => btn_icon(!showmenu)}>
+                      <NavLink to="/admin" onClick={() => btn_icon(!showmenu)}>
                         Admin
-                      </Link>
+                      </NavLink>
                     </div>
                   ) : (
                     <></>
@@ -156,29 +183,26 @@ const Header = function () {
                       {openMenu1 && (
                         <div className="item-dropdown">
                           <div className="dropdown" onClick={closeMenu1}>
-                            <Link
-                              href="/myprofile"
+                            <NavLink
+                              to="/myprofile"
                               onClick={() => btn_icon(!showmenu)}
                             >
-                              <div className="flex">
-                                <FcSettings />
-                                &nbsp;&nbsp;My Profile
-                              </div>
-                            </Link>
-                            <Link href="/pay">
-                              <div className="flex">
-                                <BsCashCoin /> &nbsp;&nbsp;Send Crypto
-                              </div>
-                            </Link>
-                            <Link
-                              href="/qrPay"
+                              <FcSettings />
+                              &nbsp;&nbsp;My Profile
+                            </NavLink>
+                            <NavLink
+                              to="/pay"
                               onClick={() => btn_icon(!showmenu)}
                             >
-                              <div className="flex">
-                                <AiOutlineQrcode />
-                                &nbsp;&nbsp;Scan QR and Pay
-                              </div>
-                            </Link>
+                              <BsCashCoin /> &nbsp;&nbsp;Send Crypto
+                            </NavLink>
+                            <NavLink
+                              to="/qrPay"
+                              onClick={() => btn_icon(!showmenu)}
+                            >
+                              <AiOutlineQrcode />
+                              &nbsp;&nbsp;Scan QR and Pay
+                            </NavLink>
                           </div>
                         </div>
                       )}
@@ -191,18 +215,24 @@ const Header = function () {
             <Breakpoint xl>
               <div className="menu">
                 <div className="navbar-item">
-                  <Link href="/">Home</Link>
+                  <NavLink to="/">
+                    Home
+                    <span className="lines"></span>
+                  </NavLink>
                 </div>
 
                 <div className="navbar-item">
-                  <Link href="/register">Link Wallet</Link>
+                  <NavLink to="/register">
+                    Link Wallet
+                    <span className="lines"></span>
+                  </NavLink>
                 </div>
 
                 {address === admin && address ? (
                   <div className="navbar-item">
-                    <Link href="/admin" onClick={() => btn_icon(!showmenu)}>
+                    <NavLink to="/admin" onClick={() => btn_icon(!showmenu)}>
                       Admin
-                    </Link>
+                    </NavLink>
                   </div>
                 ) : (
                   <></>
@@ -220,26 +250,26 @@ const Header = function () {
                         {openMenu1 && (
                           <div className="item-dropdown">
                             <div className="dropdown" onClick={closeMenu1}>
-                              <Link href="/myprofile">
+                              <NavLink to="/myprofile">
                                 <div className="flex flex-wrap">
                                   <FcSettings />
-                                  &nbsp;&nbsp;My Profiles
+                                  &nbsp;&nbsp;My Profile
                                 </div>
-                              </Link>
-                              <Link href="/pay">
+                              </NavLink>
+                              <NavLink to="/pay">
                                 <div className="flex flex-wrap">
                                   <BsCashCoin /> &nbsp;&nbsp;Send Crypto
                                 </div>
-                              </Link>
-                              <Link
-                                href="/qrPay"
+                              </NavLink>
+                              <NavLink
+                                to="/qrPay"
                                 onClick={() => btn_icon(!showmenu)}
                               >
                                 <div className="flex flex-wrap">
                                   <AiOutlineQrcode />
                                   &nbsp;&nbsp;Scan QR and Pay
                                 </div>
-                              </Link>
+                              </NavLink>
                             </div>
                           </div>
                         )}
