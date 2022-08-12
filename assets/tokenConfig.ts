@@ -26,6 +26,25 @@ const tokenConfig: Record<number, TokenInfo[]> = {
       decimal: 6,
     },
   ],
+  "1": [
+    {
+      value: 1,
+      name: "ETH",
+      address: "null",
+      symbol: "ETH",
+      token_icon: "https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=022",
+      decimal: 18,
+    },
+    {
+      value: 2,
+      name: "Wrapped BitCoin",
+      address: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+      symbol: "WBTC",
+      token_icon:
+        "https://cryptologos.cc/logos/wrapped-bitcoin-wbtc-logo.svg?v=023",
+      decimal: 18,
+    },
+  ],
   "4": [
     {
       value: 1,
