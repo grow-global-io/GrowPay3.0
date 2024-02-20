@@ -6,6 +6,7 @@ export default {
       colors: {
         "custom-purple": "#F4F1F9",
         "primary": "#29174b",
+        "secondary":"#DFD0FB",
       },
       backgroundImage: {
         "custom-gradient": "linear-gradient(180deg, #FFF 31.06%, #F4F1F9 100%)",

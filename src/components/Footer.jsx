@@ -23,7 +23,7 @@ const Footer = () => {
           <p className="text-white text-lg">©2024 DeeStream</p>
           <a className="text-white text-lg" href="mailto:support@deestream.com">support@deestream.com</a>
         </div>
-        <div className="flex gap-5">
+        <div className="flex gap-5 lg:justify-end">
           <a className="text-white text-lg" href="">Privacy Policy</a>
           <a className="text-white text-lg" href="">Terms & Conditions</a>
         </div>
