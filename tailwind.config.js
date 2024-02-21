@@ -3,6 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+     
       colors: {
         "custom-purple": "#F4F1F9",
         "primary": "#29174b",
@@ -20,7 +21,9 @@ export default {
       fontSize: {
         '68': '68px',
       '30':'30px',
-      '14':'14'
+      '14':'14px',
+      '24':'28px',
+      '18':'20px'
       },
       backgroundImage: {
         "custom-gradient": "linear-gradient(90deg, #FFF 0%, #F4F1F9 100%)",
@@ -34,6 +37,7 @@ export default {
       },
       borderColor: {
         'custom-green': '#48FFB0', // Border color
+        'custom-blue': '#1C0B3D',
       },
       borderRadius: {
         '41': '41px', // 41px border radius

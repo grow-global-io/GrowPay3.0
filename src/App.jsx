@@ -10,6 +10,7 @@ import PowerfulTokenSection from './view/PowerfulTokenSection'
 import BenefintsSection from './view/BenefintsSection'
 import Firstsection from './view/Firstsection'
 import Header from './components/Header'
+import FuturePlanSection from './view/FuturePlanSection'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +25,7 @@ function App() {
  <HowWorkSection/>
  <PowerfulTokenSection/>
  <BenefintsSection/>
+ <FuturePlanSection/>
 
     <FAQ />
     <Footer />

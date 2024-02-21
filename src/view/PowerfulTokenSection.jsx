@@ -1,7 +1,9 @@
 import React from 'react'
 import { styles } from "../styles";
-import { tokenOne,tokenTow,tokenThree,tokenFour } from '../assets';
+import { tokenOne,tokenTow,tokenThree,tokenFour,token } from '../assets';
 import PowerfulTokenCard from '../components/PowerfulTokenCard';
+import { Button } from '../components/Button';
+
 
 const PowerfulTokenSection = () => {
     const utilityData = [
@@ -28,8 +30,8 @@ const PowerfulTokenSection = () => {
       
       ];
   return (
-    <div className='w-screen min-h-screen bg-radial-gradient '>
-     <div className={`${styles.container} my-12`}>
+    <div className='w-screen min-h-screen bg-radial-gradient  py-12'>
+   <div className={`${styles.container} my-12`}>
      <div className='my-16 pt-16' >
         <p className="text-9xl font-normal text-secondary font-array text-center">UTILITY</p>
         <p className="text-6xl mt-[-50px] text-center text-white ">Powerful Token</p>
@@ -45,8 +47,41 @@ const PowerfulTokenSection = () => {
         }
 
       </div>
+      <div className='flex justify-center items-center mt-12'><Button/></div>
 
-     </div> 
+     </div>
+     <div className={`${styles.container} my-12`}>
+     <div className='my-16 pt-16' >
+        <p className="text-9xl font-normal text-secondary font-array">ECOSYSTEM</p>
+        <p className="text-6xl mt-[-50px]  text-white ">Tokenomics</p>
+      
+      </div>
+      <div className='w-full flex  flex-col sm:flex-row justify-between'>
+        <div className='w-11/12 sm:w-7/12 '>
+          <ul>
+            <li className='flex justify-between items-center py-3 px-4 sm:px-12 border-b-custom'><p className=' text-white text-18 sm:text-24 font-medium '>Presale</p><p className='text-custom-green  text-18 sm:text-24 font-normal font-array'>210,000,000</p></li>
+            <li className='flex justify-between items-center py-3 px-4 sm:px-12 border-b-custom'><p className=' text-white text-18 sm:text-24 font-medium '>Exchanges</p><p className='text-custom-green text-18 sm:text-24 font-normal font-array'>35,000,000</p></li>
+            <li className='flex justify-between items-center py-3 px-4 sm:px-12 border-b-custom'><p className=' text-white text-18 sm:text-24 font-medium '>Team Tokens</p><p className='text-custom-green text-18 sm:text-24 font-normal font-array'>15,000,000</p></li>
+            <li className='flex justify-between items-center py-3 px-4 sm:px-12 border-b-custom'><p className=' text-white text-18 sm:text-24 font-medium '>Marketing</p><p className='text-custom-green text-18 sm:text-24 font-normal font-array'>12,000,000</p></li>
+            <li className='flex justify-between items-center py-3 px-4 sm:px-12 border-b-custom'><p className=' text-white text-18 sm:text-24 font-medium '>Rewards</p><p className='text-custom-green text-18 sm:text-24 font-normal font-array'>10,000,000</p></li>
+            <li className='flex justify-between items-center py-3 px-4 sm:px-12 border-b-custom'><p className=' text-white text-18 sm:text-24 font-medium '>Partnerships</p><p className='text-custom-green text-18 sm:text-24font-normal font-array'>6,000,000</p></li>
+            <li className='flex justify-between items-center py-3 px-4 sm:px-12 border-b-custom'><p className=' text-white text-18 sm:text-24 font-medium '>Burning Event</p><p className='text-custom-green text-18 sm:text-24 font-normal font-array'>6,000,000</p></li>
+            <li className='flex justify-between items-center py-3 px-4 sm:px-12 border-b-custom'><p className=' text-white text-18 sm:text-24 font-medium '>Consultants</p><p className='text-custom-green text-18 sm:text-24 font-normal font-array'>4,000,000</p></li>
+            <li className='flex justify-between items-center py-3 px-4 sm:px-12 border-b-custom'><p className=' text-white text-18 sm:text-24 font-medium '>Legal Team</p><p className='text-custom-green text-18 sm:text-24 font-normal font-array'>2,000,000</p></li>
+  sm:
+            
+          </ul>
+
+        </div>
+        <div className=' w-11/12 sm:w-5/12 flex justify-center items-center'>
+          <img src={token} className=' img-animate w-11/12' />
+        </div>
+       
+
+      </div>
+     
+
+     </div>
     </div>
   )
 }

@@ -23,6 +23,7 @@ import payout from './payouts.svg'
 import privacy from './privacy.svg'
 import ads from './ads.svg'
 import logonavbar from './deestream-logo.svg'
+import token from './token.png'
 
 
-export { faqImg,logo, twitter, telegram, question, upArrow, downArrow, payOut,lock,speach,inCutPencil, inCutEthereum,workThree ,tokenOne,tokenTow,tokenThree,tokenFour,beneOne,beneTwo,beneThree,deeStream,payout,privacy,ads,logonavbar };
+export { faqImg,logo, twitter, telegram, question, upArrow, downArrow, payOut,lock,speach,inCutPencil, inCutEthereum,workThree ,tokenOne,tokenTow,tokenThree,tokenFour,beneOne,beneTwo,beneThree,deeStream,payout,privacy,ads,logonavbar,token };

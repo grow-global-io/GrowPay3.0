@@ -5,6 +5,12 @@ body {
 .font-array {
   font-family: "Array", sans-serif;
 }
+.border-b-custom {
+  border-bottom: 2px solid #1C0B3D;
+}
+/* .font-array1 {
+  font-family: 'array-regular', sans-serif;
+} */
 
 
 
