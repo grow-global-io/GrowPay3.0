@@ -35,7 +35,7 @@ const PowerfulTokenSection = () => {
         <p className="text-6xl mt-[-50px] text-center text-white ">Powerful Token</p>
       
       </div>
-      <div className='flex flex-row'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4'>
         {
             utilityData.map((item,index)=>{
                 return <PowerfulTokenCard img={item.img} heading={item.heading} content={item.content}/>

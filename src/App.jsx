@@ -8,16 +8,19 @@ import ChooseUsSection from './view/ChooseUsSection'
 import HowWorkSection from './view/HowWorkSection'
 import PowerfulTokenSection from './view/PowerfulTokenSection'
 import BenefintsSection from './view/BenefintsSection'
+import Firstsection from './view/Firstsection'
+import Header from './components/Header'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <h1 className='text-7xl text-center text-blue-400'>
-      Hello world
-    </h1>
-    <ChooseUsSection/>
+    
+    <Header/>
+ <Firstsection/>
+
+ <ChooseUsSection/>
  <HowWorkSection/>
  <PowerfulTokenSection/>
  <BenefintsSection/>

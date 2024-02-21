@@ -5,7 +5,7 @@ const HowWorkCard = ({heading,content,img,index}) => {
   return (
     <div className='flex flex-col m-3'>
       <div>
-        <div>
+        <div className='flex justify-center items-center'>
             <img src={img} className='h-72'/>
         </div>
     </div>

@@ -29,7 +29,7 @@ const BenefintsSection = () => {
    <p className="text-6xl mt-[-50px] text-center ">EXCLUSIVE BENEFITS</p>
  
  </div>
- <div className='flex flex-row'> 
+ <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2'> 
        {
            benefitsData.map((item)=>{
                return <BenefitsCard img={item.img} heading={item.heading} content={item.content} />

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M21.1674 8C19.6242 4.46819 16.1001 2 11.9994 2C6.8141 2 2.55055 5.94668 2.04883 11" stroke="#48FFB0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M18 8H21.4C21.7314 8 22 7.73137 22 7.4V4" stroke="#48FFB0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M2.88086 16C4.42398 19.5318 7.94814 22 12.0488 22C17.2341 22 21.4977 18.0533 21.9994 13" stroke="#48FFB0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M6.04883 16H2.64883C2.31746 16 2.04883 16.2686 2.04883 16.6V20" stroke="#48FFB0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M9 12C9.00007 12.8416 9 15.107 9 16.3941C9 16.7255 9.26863 16.9943 9.59998 16.9962C12.5662 17.0136 15 17.072 15 14.5C15 11.7564 12 12 9 12ZM9 12L9.00003 7.60592C9.00003 7.27453 9.26867 7.00571 9.60005 7.00377C12.5662 6.98641 15 6.92799 15 9.5C15 12.2436 12 12 9 12Z" stroke="#48FFB0" stroke-width="1.5"></path>
+  <path d="M12 7V5.5" stroke="#48FFB0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M12 18.5V17" stroke="#48FFB0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>

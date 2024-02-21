@@ -2,7 +2,7 @@ import React from 'react'
 import { styles } from "../styles";
 import HowWorkCard from '../components/HowWorkCard';
 import { inCutEthereum ,inCutPencil,workThree } from '../assets';
-import { faqImg } from "../assets";
+
 
 const HowWorkSection = () => {
     const howWorkData = [
@@ -31,7 +31,7 @@ const HowWorkSection = () => {
         <p className="text-6xl mt-[-50px] text-center ">How it works</p>
       
       </div>
-         <div className='flex flex-row'> 
+         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'> 
             {
                 howWorkData.map((item,index)=>{
                     return <HowWorkCard img={item.img} heading={item.heading} content={item.content} index={index}/>

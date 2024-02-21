@@ -27,8 +27,8 @@ const ChooseUsSection = () => {
   return (
     <div className={`${styles.container} my-12`}>
     <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-    <div>
-    <img src={chooseImg} alt="" className="img-animate" />
+    <div className='flex justify-center items-center'>
+    <img src={chooseImg} alt="" className="img-animate w-3/5 lg:mt-12 xl:w-full" />
     </div>
     
      <div>

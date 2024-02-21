@@ -18,6 +18,11 @@ import tokenFour from './token-four.png'
 import beneOne from './bene-one.png'
 import beneTwo from './bene-two.png'
 import beneThree from './bene-three.png'
+import deeStream from './deestream-gif.gif'
+import payout from './payouts.svg'
+import privacy from './privacy.svg'
+import ads from './ads.svg'
+import logonavbar from './deestream-logo.svg'
 
 
-export { faqImg,logo, twitter, telegram, question, upArrow, downArrow, payOut,lock,speach,inCutPencil, inCutEthereum,workThree ,tokenOne,tokenTow,tokenThree,tokenFour,beneOne,beneTwo,beneThree };
+export { faqImg,logo, twitter, telegram, question, upArrow, downArrow, payOut,lock,speach,inCutPencil, inCutEthereum,workThree ,tokenOne,tokenTow,tokenThree,tokenFour,beneOne,beneTwo,beneThree,deeStream,payout,privacy,ads,logonavbar };
