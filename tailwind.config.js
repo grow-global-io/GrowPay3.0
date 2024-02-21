@@ -22,14 +22,17 @@ export default {
         '68': '68px',
       '30':'30px',
       '14':'14px',
-      '24':'28px',
-      '18':'20px'
+      '24':'24px',
+      '18':'20px',
+      '40':'40px'
+
       },
       backgroundImage: {
         "custom-gradient": "linear-gradient(90deg, #FFF 0%, #F4F1F9 100%)",
         "radial-gradient":"radial-gradient(77.77% 65.72% at 52.78% 15.56%, #9E6FF4 0%, #0F0326 100%)",
         "background-of-firstsection":"radial-gradient(82.5% 90.11% at 80.64% 44.61%, #9E6FF4 0%, #0F0326 87%)",
-        "bckgrd-benefitcrd":"linear-gradient(180deg, #FFF 31.06%, #F4F1F9 100%)"
+        "bckgrd-benefitcrd":"linear-gradient(180deg, #FFF 31.06%, #F4F1F9 100%)",
+        
         
       },
       borderWidth: {
@@ -56,6 +59,13 @@ export default {
       },
       padding: {
         'pt-85': '85px 0 0 0', // 85px padding top
+      },
+      margin: {
+        'mt-30':'30px 0 0 0', 
+        'mt-60':'60px 0 0 0',
+        'mt-100':'150px 0 0 0',
+        'mt-00':'0 0 0 0',
+        
       },
       variants: {
         extend: {

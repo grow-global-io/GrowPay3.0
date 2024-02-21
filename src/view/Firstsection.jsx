@@ -7,7 +7,8 @@ import { payout,privacy,ads } from '../assets';
 
 const Firstsection = () => {
   return (
-    <div className='bg-background-of-firstsection w-screen h-auto pb-8 pt-8'>
+    
+    <div className='bg-background-of-firstsection w-screen h-auto pb-8 pt-8 max-width'>
         <div className={`${styles.container} my-12`}>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-1'>
                 <div className='flex justify-center flex-col'>

@@ -24,7 +24,7 @@ const ChooseUsSection = () => {
         },
       
       ];
-  return (
+  return (<div className='max-width'>
     <div className={`${styles.container} my-12`}>
     <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
     <div className='flex justify-center items-center'>
@@ -43,6 +43,7 @@ const ChooseUsSection = () => {
      </div>
 
     </div>
+  </div>
   </div>
   )
 }

@@ -16,7 +16,7 @@ const FuturePlanSection = () => {
         
       
       ];
-  return (
+  return (<div className='max-width'>
     <div className={`${styles.container} my-12`}>
     <div className='mb-12 bt-10' >
    <p className="text-9xl font-normal text-secondary font-array text-center">ROADMAP</p>
@@ -33,6 +33,7 @@ const FuturePlanSection = () => {
 
     </div> 
 
+</div>
 </div>
   )
 }

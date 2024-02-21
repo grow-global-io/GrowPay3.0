@@ -30,7 +30,7 @@ const PowerfulTokenSection = () => {
       
       ];
   return (
-    <div className='w-screen min-h-screen bg-radial-gradient  py-12'>
+    <div className='w-screen min-h-screen bg-radial-gradient  py-12 max-width'>
    <div className={`${styles.container} my-12`}>
      <div className='my-16 pt-16' >
         <p className="text-9xl font-normal text-secondary font-array text-center">UTILITY</p>
@@ -56,8 +56,8 @@ const PowerfulTokenSection = () => {
         <p className="text-6xl mt-[-50px]  text-white ">Tokenomics</p>
       
       </div>
-      <div className='w-full flex  flex-col sm:flex-row justify-between'>
-        <div className='w-11/12 sm:w-7/12 '>
+      <div className='w-full flex  flex-col lg:flex-row justify-between'>
+        <div className='w-11/12 lg:w-7/12 '>
           <ul>
             <li className='flex justify-between items-center py-3 px-4 sm:px-12 border-b-custom'><p className=' text-white text-18 sm:text-24 font-medium '>Presale</p><p className='text-custom-green  text-18 sm:text-24 font-normal font-array'>210,000,000</p></li>
             <li className='flex justify-between items-center py-3 px-4 sm:px-12 border-b-custom'><p className=' text-white text-18 sm:text-24 font-medium '>Exchanges</p><p className='text-custom-green text-18 sm:text-24 font-normal font-array'>35,000,000</p></li>
@@ -73,7 +73,7 @@ const PowerfulTokenSection = () => {
           </ul>
 
         </div>
-        <div className=' w-11/12 sm:w-5/12 flex justify-center items-center'>
+        <div className=' w-11/12 lg:w-5/12 flex justify-center items-center'>
           <img src={token} className=' img-animate w-11/12' />
         </div>
        

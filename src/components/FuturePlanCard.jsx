@@ -2,7 +2,7 @@ import React from 'react'
 
 const FuturePlanCard = ({index,content}) => {
   return (
-    <div className={`mt-${0+index*3} `} >
+    <div className={`m-mt-${3*index}0`} >
     
     <div className='bg-white px-8 pt-6 pb-13 mt-5 rounded-lg bg-bckgrd-benefitcrd'>
         

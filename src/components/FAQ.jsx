@@ -18,7 +18,9 @@ const FAQ = () => {
       content: "This is the content of accordion 3.",
     },
   ];
-  return (
+  return (<div className="max-width">
+
+ 
     <div className={`${styles.container} my-12`}>
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
       <div>
@@ -28,6 +30,7 @@ const FAQ = () => {
       </div>
       <Accordion items={accordionData} />
       </div>
+    </div>
     </div>
   );
 };

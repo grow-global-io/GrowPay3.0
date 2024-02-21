@@ -11,6 +11,7 @@ import BenefintsSection from './view/BenefintsSection'
 import Firstsection from './view/Firstsection'
 import Header from './components/Header'
 import FuturePlanSection from './view/FuturePlanSection'
+import StrmResltnSection from './view/StrmResltnSection'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,7 +26,9 @@ function App() {
  <HowWorkSection/>
  <PowerfulTokenSection/>
  <BenefintsSection/>
+ <StrmResltnSection/>
  <FuturePlanSection/>
+ 
 
     <FAQ />
     <Footer />

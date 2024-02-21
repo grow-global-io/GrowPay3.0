@@ -2,6 +2,7 @@ import React from 'react'
 import { styles } from "../styles";
 import { beneOne,beneTwo,beneThree } from '../assets';
 import BenefitsCard from '../components/BenefitsCard';
+import { Button } from '../components/Button';
 
 const BenefintsSection = () => {
     const benefitsData = [
@@ -22,7 +23,7 @@ const BenefintsSection = () => {
         },
       
       ];
-  return (
+  return (<div className='max-width'>
     <div className={`${styles.container} my-12`}>
     <div className='mb-12 bt-10' >
    <p className="text-9xl font-normal text-secondary font-array text-center">PERKS</p>
@@ -37,8 +38,10 @@ const BenefintsSection = () => {
            })
        }
 
-    </div> 
+</div> 
+<div className='flex justify-center items-center mt-12 '><Button/></div>
 
+</div>
 </div>
   )
 }

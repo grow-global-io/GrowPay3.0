@@ -25,6 +25,7 @@ const HowWorkSection = () => {
       ];
 
   return (
+    <div className='max-width'>
     <div className={`${styles.container} my-12`}>
          <div className='mb-12 bt-10' >
         <p className="text-9xl font-normal text-secondary font-array text-center">3-STEPS</p>
@@ -41,6 +42,7 @@ const HowWorkSection = () => {
 
          </div> 
 
+   </div>
    </div>
   )
 }

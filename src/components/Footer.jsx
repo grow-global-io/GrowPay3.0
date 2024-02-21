@@ -3,6 +3,9 @@ import { styles } from "../styles";
 import { logo, twitter, telegram } from "../assets";
 const Footer = () => {
   return (
+    <div className="max-width">
+
+  
     <div className={`${styles.container} px-5 py-5   rounded-md bg-primary w-full`}>
       <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-4 justify-center">
         <img src={logo} className="max-h-24" />
@@ -28,6 +31,7 @@ const Footer = () => {
           <a className="text-white text-lg" href="">Terms & Conditions</a>
         </div>
       </div>
+    </div>
     </div>
   );
 };
