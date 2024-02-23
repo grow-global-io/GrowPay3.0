@@ -17,6 +17,32 @@ body {
 .border-b-custom {
   border-bottom: 2px solid #1C0B3D;
 }
+.signup-container{
+  background-image: url('./assets/deestream-bg.png') ;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.signup-subcontainer{
+  max-width: 905px;
+  width: 85%;
+}
+.login-subcontainer{
+  max-width: 520px;
+  width: 85%;
+}
+.input-parent-width{
+  width: calc(50% - 15px);
+}
+@media screen and (max-width: 780px) {
+  .input-parent-width{
+    width:100%;
+  }
+  
+}
+.input-border{
+  border: 1px solid rgb(127 ,127 ,127 );
+}
 /* .font-array1 {
   font-family: 'array-regular', sans-serif;
 } */

@@ -1,5 +1,6 @@
 import React from "react";
 import { upArrow } from "../assets";
+import { Link } from "react-router-dom";
 
 const Button = () => {
   return (
@@ -9,10 +10,10 @@ const Button = () => {
     </div>
   );
 };
-const ButtonWhite = () => {
+const ButtonWhite = ({path}) => {
   return (
     <div className="flex  justify-center items-center text-md  w-max py-3 px-6 text-black bg-white font-medium border-1 rounded-41 transition-all duration-600 cursor-pointer">
-      Sign Up
+     <Link to={path}>Sign Up</Link> 
     </div>
   );
 };

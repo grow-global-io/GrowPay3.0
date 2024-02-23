@@ -30,9 +30,9 @@ const Header = () => {
         </ul>
         <div className=" hidden xl:flex w-1/5 text-white  justify-center items-center">
           <p className="mx-6 text-white hover:text-#e3dfdf text-md duration-600 cursor-pointer">
-            login
+            <Link to={'/login'}>login</Link>
           </p>
-          <ButtonWhite />
+          <ButtonWhite path={'/signup'}/>
         </div>
       </div>
     </div>

@@ -13,7 +13,8 @@ export default {
         "custom-blue":"#14072D",
         "custom-green":"#48FFB0",
         "#29174b":"#29174b",
-        "#e3dfdf":"#e3dfdf"
+        "#e3dfdf":"#e3dfdf",
+        "input-color":'rgba(225 ,225 ,225, 225, 1)'
       },
       boxShadow: {
         'custom-shadow': '0 0 15px 0 rgba(0, 0, 0, 0.2)', // Custom box shadow
@@ -32,6 +33,7 @@ export default {
         "radial-gradient":"radial-gradient(77.77% 65.72% at 52.78% 15.56%, #9E6FF4 0%, #0F0326 100%)",
         "background-of-firstsection":"radial-gradient(82.5% 90.11% at 80.64% 44.61%, #9E6FF4 0%, #0F0326 87%)",
         "bckgrd-benefitcrd":"linear-gradient(180deg, #FFF 31.06%, #F4F1F9 100%)",
+        
         
         
       },
@@ -56,6 +58,9 @@ export default {
       },
       letterSpacing: {
         '-136': '-1.36px', // Adding custom letter spacing
+      },
+      wordSpacing: {
+        '100px': '100px',
       },
       padding: {
         'pt-85': '85px 0 0 0', // 85px padding top
