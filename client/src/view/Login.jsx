@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
 
-const Login = () => {
+const Login= () => {
    const [email,setEmail]=useState('')
    const [password,setPassword]=useState('')
    const loginFunc=async ()=>{
@@ -18,7 +18,7 @@ const Login = () => {
         return
       }
       try{
-      const response=await axios.post('/api/loginusers', {
+      const response=await axios.post('http://localhost:8080/login', {
         email:email,
         password:password,
        })
@@ -42,12 +42,12 @@ const Login = () => {
        </div>
        <form>
             <div className='flex w-full justify-between flex-wrap gap-6 mt-8'>
-               <div className='pb-0  w-full'><input type='email' placeholder='Your Username' className='w-full h-12 rounded-full bg-transparent px-4 leading-5 text-xl min-h-12 text-white input-border' onChange={(e)=>{
+               <div className='pb-0  w-full'><input type='email' placeholder='Your Username' className='w-full h-12 rounded-full bg-transparent px-4 leading-5 text-xl min-h-12 text-white input-border'value={email} onChange={(e)=>{
                   setEmail(e.target.value)
-                }} value={email}/></div>
-               <div className='pb-0  w-full'><input type='password' placeholder='Your Email' className='w-full h-12 rounded-full bg-transparent px-4 leading-5 text-xl min-h-12 text-white input-border'  onChange={(e)=>{
+                }} /></div>
+               <div className='pb-0  w-full'><input type='password' placeholder='Your Email' className='w-full h-12 rounded-full bg-transparent px-4 leading-5 text-xl min-h-12 text-white input-border' value={password}  onChange={(e)=>{
                   setPassword(e.target.value)
-                }} value={password}/></div>
+                }} /></div>
             </div>
             <div className='w-full py-6 flex justify-between'>
                <div>
@@ -60,7 +60,7 @@ const Login = () => {
                </div>
               
             </div>
-            <div className='w-full'><button className='w-full h-12 rounded-full  px-4 leading-5 text-xl min-h-12 text-black bg-custom-green' onClick={loginFunc}>Create Account</button></div>
+            <div className='w-full'><button className='w-full h-12 rounded-full  px-4 leading-5 text-xl min-h-12 text-black bg-custom-green'type='button' onClick={loginFunc} >Sign in</button></div>
         
             <div className='text-lg text-center mt-4 text-white'>Don’t have an account? <Link className='text-custom-green' to={'/signup'}>Sign up here</Link>   </div>
        </form>
