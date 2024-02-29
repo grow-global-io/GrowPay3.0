@@ -1,0 +1,39 @@
+.progress-bar {
+    color: #758698;
+    background: #cbcbcb;
+    height: 20px;
+    border-radius: 15px !important;
+    margin: 40px 0 40px;
+    display: block;
+    position: relative;
+    text-align: center;
+  white-space: nowrap;
+  transition: width .6s ease;
+  }
+  .progress-percent {
+    background: #48ffb0;
+    height: 20px;
+    border-radius: 100px;
+    top: 0;
+  left: 0;
+  width: 56%;
+  }
+  .progress-percent::after {
+    height: 35px;
+    width: 35px;
+ 
+    content: "";
+    font-size: 45px;
+    border: none;
+ 
+    background: url('./../assets/coin-deestream.png');
+     
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 44%;
+    filter: drop-shadow(2px 4px 6px black);
+    border-radius: 50%;
+  transform: translate(50%, -50%);
+  position: absolute;
+  /* right: 0; */
+  }

@@ -26,6 +26,20 @@ import logonavbar from './deestream-logo.svg'
 import token from './token.png'
 import streaming from './streaming.png'
 import logo2x from './logo2x.png'
+import tokenSymbol from './token-symbol-light.png'
+import rightArrow from './right-arrow.svg'
+import twitterLogo from './twitter-img1.svg'
+import telegramLogo from './telegram.svg'
+import logoLight2x from './logo-light2x.png'
+import user from './user.png'
+import trader from './trader.png'
+import transaction from './transaction.png'
+import dashboard from './dashboard.png'
+import home from './home.png'
+import powerOff from './power.png'
+import coinStack from './coin-stack.png'
+import sideBarlogo from './sidebar-logo.png'
 
 
-export { faqImg,logo, twitter, telegram, question, upArrow, downArrow, payOut,lock,speach,inCutPencil, inCutEthereum,workThree ,tokenOne,tokenTow,tokenThree,tokenFour,beneOne,beneTwo,beneThree,deeStream,payout,privacy,ads,logonavbar,token,streaming,logo2x };
+
+export { faqImg,logo, twitter, telegram, question, upArrow, downArrow, payOut,lock,speach,inCutPencil, inCutEthereum,workThree ,tokenOne,tokenTow,tokenThree,tokenFour,beneOne,beneTwo,beneThree,deeStream,payout,privacy,ads,logonavbar,token,streaming,logo2x,tokenSymbol,rightArrow,twitterLogo,telegramLogo,logoLight2x,user,trader,transaction,dashboard,home,powerOff,coinStack,sideBarlogo};

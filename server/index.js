@@ -3,6 +3,8 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import User from "./models/User.js";
 import cors from "cors"; // Import the cors middleware
+import jwt from 'jsonwebtoken';
+
 
 dotenv.config()
 const app = express();
@@ -36,6 +38,7 @@ app.post('/signup', async (req, res) => {
         return res.status(201).json({
             success: true,
             data: savedUser,
+            token:await newUser.generateToken(),
             message: "User registered successfully"
         });
     } catch (err) {
@@ -45,6 +48,43 @@ app.post('/signup', async (req, res) => {
         });
     }
 });
+
+// app.post('/login', async (req, res) => {
+//     const { email, password } = req.body;
+//     if (!email || !password) {
+//         return res.status(400).json({
+//             success: false,
+            
+//             message: "Please provide an email and a password"
+//         });
+//     }
+
+//     try {
+//         const loginUser = await User.findOne({ email, password });
+//         if (!loginUser) {
+//             return res.status(400).json({
+//                 success: false,
+//                 message: "Invalid credentials"
+//             });
+//         }
+//         return res.status(200).json({
+//             success: true,
+//             data: loginUser,
+//             message: "User logged in successfully"
+//         });
+//     } catch (error) {
+//         return res.status(500).json({
+//             success: false,
+//             message: error.message
+//         });
+//     }
+// });
+
+
+function generateToken(user) {
+    return jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
+}
+
 
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
@@ -63,9 +103,11 @@ app.post('/login', async (req, res) => {
                 message: "Invalid credentials"
             });
         }
+        const token = generateToken(loginUser); // Generate JWT token
         return res.status(200).json({
             success: true,
-            data: loginUser,
+            data:loginUser ,
+            token , // Return token in response
             message: "User logged in successfully"
         });
     } catch (error) {
@@ -75,6 +117,37 @@ app.post('/login', async (req, res) => {
         });
     }
 });
+// app.post('/profile',verifyToken,(req,res)=>{
+//     jwt.verify(req,token,process.env.JWT_SECRET_KEY,(err,autData)=>{
+//         if(err){
+//             res.send({
+//                 result:"invalid token"
+//             })
+//         }else{
+//             res.json({
+//                 message:"profile access",
+//                 autData
+//             })
+//         }
+//     })
+
+// })
+// function verifyToken(req,res,next){
+//     const bearerHeader=req.headers['authentication']
+//     if(typeof bearerHeader !== "undefined"){
+//         const bearer=bearerHeader.split(' ');
+//         const token=bearer[1];
+//         req.token=token;
+//         next()
+
+//     }else{
+//         res.send({
+//             result:"token is not valid"
+//         })
+//     }
+
+// }
+
 
 
 

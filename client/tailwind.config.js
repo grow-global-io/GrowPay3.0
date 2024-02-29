@@ -14,8 +14,38 @@ export default {
         "custom-green":"#48FFB0",
         "#29174b":"#29174b",
         "#e3dfdf":"#e3dfdf",
-        "input-color":'rgba(225 ,225 ,225, 225, 1)'
+        "input-color":'rgba(225 ,225 ,225, 225, 1)',
+        "custom-white":"rgba(255,255,255,0.2)",
+        "#00d285-green":"#00d285",
+        "#cbcbcb-light":"#cbcbcb",
+        "#758698-light":"#758698",
+        'trans-black':"rgba(0, 0, 0, 0.6);",
+        "#322d2d-black":"#322d2d",
+        "ligh-black":"#495463",
+        "#000-black":"#000",
+        "black-opacity":'rgba(0, 0, 0, .2)'
+        
       },
+      minHeight: {
+        '240': '240px',
+        '396':'396px'
+      },
+      minWidth: {
+        '33%': '33.33%',
+      },
+      width:{
+      '22px':'20px',
+      '32px':'32px',
+      '40px':'40px',
+      "400px":"250px",
+      '180px':"180px",
+      '70px':"70px"
+      },
+      height:{
+      
+      '40px':'40px'
+      },
+
       boxShadow: {
         'custom-shadow': '0 0 15px 0 rgba(0, 0, 0, 0.2)', // Custom box shadow
       },
@@ -23,9 +53,15 @@ export default {
         '68': '68px',
       '30':'30px',
       '14':'14px',
+      '15px':'15px',
+      '12':'12px',
       '24':'24px',
       '18':'20px',
-      '40':'40px'
+      '40':'40px',
+      "21":"21px",
+      '19':'17px',
+      '25px':"25px"
+    
 
       },
       backgroundImage: {
@@ -63,13 +99,23 @@ export default {
         '100px': '100px',
       },
       padding: {
-        'pt-85': '85px 0 0 0', // 85px padding top
+        'pt-85': '85px 0 0 0',
+        "32":"32px",
+        "p-20":"20px 20px 0 20px",
+        "px-80px":"0 10px 0 80px",
+        "p-10-45px": "10px 45px 10px 15px",
+        "px-15px":"0 -15px",
+        "p-8-30": "8px 30px;",
+        "p-td":" 45px 0 15px"
+      
       },
       margin: {
         'mt-30':'30px 0 0 0', 
         'mt-60':'60px 0 0 0',
         'mt-100':'150px 0 0 0',
         'mt-00':'0 0 0 0',
+        'm-minus':"-10px -7px",
+        "m-plus":'10px 7px'
         
       },
       variants: {

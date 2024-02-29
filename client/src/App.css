@@ -11,17 +11,39 @@ body {
   max-width: 100vw;
 }
 
+.clipboard{
+  background-color: rgba(255,255,255,0.9);
+}
 .font-array {
   font-family: "Array", sans-serif;
 }
+.oss-font-family{
+  font-family: "open_sauce_sans", sans-serif;
+}
+.ipm-font-family{
+  font-family: 'IBM Plex Mono', monospace;
+}
 .border-b-custom {
   border-bottom: 2px solid #1C0B3D;
+}
+.account-border{
+  border-bottom: 2px solid #d3e0f3;
+}
+.balance-border{
+  border: 1px solid #e6effb;
+
+}
+.sap-light {
+  width: 100%;
+  border-bottom: 1px solid #e6effb;
 }
 .signup-container{
   background-image: url('./assets/deestream-bg.png') ;
   background-position:center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  overflow-y: scroll;
 }
 .signup-subcontainer{
   max-width: 905px;
@@ -34,20 +56,43 @@ body {
 .input-parent-width{
   width: calc(50% - 15px);
 }
-@media screen and (max-width: 780px) {
-  .input-parent-width{
-    width:100%;
-  }
-  
-}
+
 .input-border{
   border: 1px solid rgb(127 ,127 ,127 );
 }
 /* .font-array1 {
   font-family: 'array-regular', sans-serif;
 } */
+.badge{
+  padding: 2px 8px;
+  font-size: 11px;
+  line-height: 15px;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: 500;
+  color: #fff;
+  border: 1px solid #00d285;
+  min-width: 60px;
+  vertical-align: middle;
+}
 
+.active{
+  background-color: rgba(255,255,255,0.2);
+  
+}
+.proactive {
+  color: black !important;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+  border-bottom:3px solid #00d285;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.buttonOnHover:hover{
+  background:rgba(255,255,255,0.8);
+  transition: 0.5s;
 
+}
 
 @keyframes upsitedown {
   0% {
@@ -62,6 +107,7 @@ body {
 .img-animate {
   animation: upsitedown 2s linear 0.2s infinite alternate;
 }
+
 
 .accordion-title {
   cursor: pointer;
@@ -82,4 +128,10 @@ body {
 
 .accordion-icon {
   margin-right: 10px;
+}
+@media screen and (max-width: 780px) {
+  .input-parent-width{
+    width:100%;
+  }
+  
 }

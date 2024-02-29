@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { logo2x} from '../assets'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -22,17 +22,25 @@ const Login= () => {
         email:email,
         password:password,
        })
-       if(response?.data?.data){
-        alert("user logged in successfully")
-        window.location.href = '/'
-       }else {
-        alert(response?.data?.message)
-      }
+       if (response?.data?.token) {
+        // Store token in local storage or cookies
+        localStorage.setItem('token', response.data.token);
+        alert("User logged in successfully");
+        // Redirect to user page
+        window.location.href = '/user';
+    } else {
+        setError(response?.data?.message || "Login failed");
+    }
      }catch(err){
       console.log(err)
      }
   
     }
+    useEffect(()=>{
+      if((localStorage.getItem("token"))){
+        window.location.href = '/user';
+      }
+    },[])
   return (
     <div className='max-width bg-black min-h-screen h-auto signup-container flex justify-center items-center'>
     <div className='login-subcontainer h-auto bg-primary shadow-custom-shadow py-14 px-11 rounded-3xl'>

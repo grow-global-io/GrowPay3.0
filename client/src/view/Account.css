@@ -1,0 +1,40 @@
+
+.button{
+    background-color: #d2d2d2;
+    width: 55px;
+    height: 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+.button::before{
+    position: absolute;
+    content: '';
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    border-radius: 200px;
+    margin-top: 1.5px;
+    transition: 0.2s;
+}
+.toggle-input:checked + .button{
+    background-color:#48FFB0 ;
+}
+.toggle-input:checked + .button::before{
+    transform: translateX(32px);
+}
+.toggle-input{
+    display: none;
+}
+.blue{
+    color: rgba(27,171,254,0.9);
+}
+.red{
+    color: rgba(255,104,104,0.9);
+}
+.badge-disabled {
+    color: #495463;
+    background: #d2dde9;
+    border-color: #d2dde9;
+  }

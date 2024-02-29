@@ -1,0 +1,70 @@
+.input-bordered {
+    height: 3rem;
+    width: 100%;
+    border-radius: 9999px;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    /* border: rgb(127 127 127/1); */
+    border: 1px solid rgb(127 127 127/1) ;
+    background-color: transparent;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255/1);
+    transition-duration: .2s;
+    min-height: 48px;
+}
+.token-pay-currency {
+    position: absolute;
+    right: 0;
+    top: 11px;
+    transform: translate(0);
+    z-index: 1;
+    padding: 0 10px;
+    border-left: 1px solid #d2dde9;
+  }
+
+  .input-hint {
+    padding: 4px !important;
+    text-transform: uppercase;
+    background: #48ffb0;
+    transform: translateY(-50%);
+    color: #758698;
+    line-height: 1;
+    font-weight: 500;
+    z-index: 1;
+
+  }
+  .token-eq-sign {
+    color: #758698;
+    padding: 0 10px;
+    font-size: 20px;
+  } 
+  .token-overview {
+    border-radius: 4px;
+    padding: 0 20px;
+    border: 2px solid #e6effb;
+    overflow: hidden;
+  }
+  .col-md-4 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    
+  }
+  .token-overview-title {
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    .col-md-4 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+      
+    }
+  }

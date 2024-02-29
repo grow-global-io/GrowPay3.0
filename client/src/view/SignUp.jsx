@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { logo2x } from '../assets'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -36,7 +36,7 @@ const SignUp = () => {
       })
       if (response?.data?.data) {
         alert("account created succefully")
-        window.location.href = '/login'
+        window.location.href = '/user'
       } else {
         alert(response?.data?.message)
       }
@@ -45,6 +45,11 @@ const SignUp = () => {
     // }
 
   }
+  useEffect(()=>{
+    if((localStorage.getItem("token"))){
+      window.location.href = '/user';
+    }
+  },[])
   return (
     <div className='max-width bg-black min-h-screen h-auto signup-container flex justify-center items-center'>
       <div className='signup-subcontainer h-auto bg-primary shadow-custom-shadow py-9 px-11 rounded-3xl'>
