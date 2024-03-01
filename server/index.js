@@ -31,8 +31,7 @@ function generateToken(user) {
 app.post('/signup', async (req, res) => {
     const { username, email, password } = req.body;
     const newUser = new User({ username, email, password });
-
-    try {
+   try {
         const savedUser = await newUser.save();
         const token = generateToken(savedUser);
         return res.status(201).json({
