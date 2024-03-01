@@ -35,10 +35,10 @@ const PowerfulTokenSection = () => {
     <div className="min-h-screen bg-radial-gradient  ">
       <div className={`${styles.container} my-12`}>
         <div className="my-16 pt-16">
-          <p className="text-9xl font-normal text-secondary font-array text-center">
+          <p className="text-7xl lg:text-9xl font-normal text-#A681E9 font-array text-center">
             UTILITY
           </p>
-          <p className="text-6xl mt-[-50px] text-center text-white ">
+          <p className="text-3xl lg:text-6xl mt-[-40px] lg:mt-[-50px] text-center text-white ">
             Powerful Token
           </p>
         </div>
@@ -59,10 +59,10 @@ const PowerfulTokenSection = () => {
       </div>
       <div className={`${styles.container} my-12`}>
         <div className="my-16 pt-16">
-          <p className="text-9xl font-normal text-secondary font-array">
+          <p className="text-7xl lg:text-9xl font-normal text-#1F0B41 font-array text-center lg:text-start">
             ECOSYSTEM
           </p>
-          <p className="text-6xl mt-[-50px]  text-white ">Tokenomics</p>
+          <p className="text-3xl lg:text-6xl mt-[-40px] lg:mt-[-50px]  text-white text-center lg:text-start">Tokenomics</p>
         </div>
         <div className="w-full flex  flex-col lg:flex-row justify-between">
           <div className="w-11/12 lg:w-7/12 ">

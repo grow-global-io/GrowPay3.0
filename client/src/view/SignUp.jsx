@@ -1,8 +1,10 @@
 import React, { useState,useEffect } from 'react'
 import { logo2x } from '../assets'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
+import { Link, useNavigate } from 'react-router-dom'
+import { apiCall, authEndpoints, methods } from '../constants'
+
 const SignUp = () => {
+  const navigate = useNavigate()
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -28,21 +30,20 @@ const SignUp = () => {
       alert("password should be same")
       return
     }
-    // try {
-      const response = await axios.post('http://localhost:8080/signup', {
-        username: username,
-        email: email,
-        password: password,
+   
+    apiCall(authEndpoints.signup ,methods.post, {  
+      username: username,
+      email: email,
+      password: password,}).then((response)=>{
+        if (response?.token) {
+          localStorage.setItem('token', response.token);
+          toast.success("Account Created successfull");
+          navigate('/user')
+        } else {
+          toast.error(response?.message || "Signup failed");
+        }
+
       })
-      if (response?.data?.data) {
-        alert("account created succefully")
-        window.location.href = '/user'
-      } else {
-        alert(response?.data?.message)
-      }
-    // } catch (err) {
-    //   console.log(err)
-    // }
 
   }
   useEffect(()=>{

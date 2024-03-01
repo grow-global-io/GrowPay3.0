@@ -32,8 +32,8 @@ const ChooseUsSection = () => {
     </div>
     
      <div>
-     <p className="text-9xl font-normal text-secondary font-array">BENEFITS</p>
-        <p className="text-6xl mt-[-50px]  mb-8">Why choose us?</p>
+     <p className="text-7xl lg:text-9xl font-normal text-secondary font-array">BENEFITS</p>
+        <p className=" text-3xl lg:text-6xl mt-[-40px] lg:mt-[-50px]  mb-8">Why choose us?</p>
     
    {
      chooseUsData.map((item,index)=>{

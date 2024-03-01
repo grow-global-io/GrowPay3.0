@@ -23,8 +23,10 @@ export default {
         "#322d2d-black":"#322d2d",
         "ligh-black":"#495463",
         "#000-black":"#000",
-        "black-opacity":'rgba(0, 0, 0, .2)'
-        
+        "black-opacity":'rgba(0, 0, 0, .2)',
+        "custom-blue":" #5b3b92" ,
+        "#1F0B41":"#1F0B41" ,      
+        "#A681E9":"#A681E9"       
       },
       minHeight: {
         '240': '240px',
