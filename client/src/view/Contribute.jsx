@@ -1,11 +1,8 @@
 import React from 'react'
-import { tokenSymbol } from '../assets'
-import { ButtonGreen } from '../components/Button'
-import { Link } from 'react-router-dom'
-import { rightArrow, twitterLogo, telegramLogo, sideBarlogo, logoLight2x } from '../assets'
+import { tokenSymbol,bitcoin,bnb,dogecoin,ethereum,shiba,solana,tetherEr,tetherTr,usdc } from '../assets'
+import {  sideBarlogo, logoLight2x } from '../assets'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink, faBars,faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import { faCopy } from "@fortawesome/free-regular-svg-icons";
+import {  faBars,faCircleInfo,faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import SideBar from '../components/SideBar'
 import { useState } from 'react'
 import { ButtonCustomGreen } from '../components/Button'
@@ -31,6 +28,22 @@ const Contribute = () => {
         }
 
     }
+    const [showoption ,setShowoption]=useState("")
+    const [isshowoption ,setIsshowoption]=useState(false)
+    const showOptionfunc=()=>{
+     
+        if(showoption==""){
+            setShowoption("show")
+            setIsshowoption(true)
+        }else{
+            setShowoption("")
+            setIsshowoption(false)
+        }
+
+    }
+    const [currency,setCurrency]=useState('')
+    const [currencyimg,setCurrencyimg]=useState(bitcoin)
+    const [currencytext ,setCurrencytext]=useState("Bitcoin (BTC)")
     return (
         <div className='flex h-screen w-screen'>
             <div className='w-auto h-auto '>
@@ -38,6 +51,7 @@ const Contribute = () => {
 
             </div>
             <div className='grow h-auto bg-custom-green signup-container lg:px-5  p-px-80px'>
+                {/* <input className='hidden' value={}/> */}
                 <div className='flex justify-end lg:justify-start items-center '>
                 <FontAwesomeIcon icon={faBars} className='text-white text-25px mt-7 ms-4 mb-3 me-3' onClick={toggleSideBar}/>
                 </div>
@@ -49,8 +63,98 @@ const Contribute = () => {
                                     Select your currency and the amount you want to invest
                                 </h4>
                             </div>
+
                             <div>
-                                <p className='text-white text-lg font-light'>You can buy DST tokens using the below currency options.</p>  </div>
+                                <p className='text-white text-lg font-light'>You can buy DST tokens using the below currency options.</p>  
+                            </div>
+                            <div className='relative mt-2'>
+                                <div className='w-full h-12 rounded-full bg-transparent px-4 leading-5 text-lg min-h-12 text-white input-border relative flex justify-start items-center ipm-font-family' onClick={showOptionfunc}>
+                                    <input className='hidden' value={currency}/>
+                                    <img src={currencyimg} className='w-5'/>
+                                    <div className='ms-3'>{currencytext}</div>
+                                    <FontAwesomeIcon icon={faAngleDown} className='absolute top-4 right-3'/>
+                                </div>
+                                <div className={`w-full text-white ipm-font-family bg-primary z-10 dropdown-option ${showoption} `}>
+                                  <ul>
+                                    <li className='flex justify-start items-center px-4 leading-5 text-lg' onClick={()=>{
+                                        setCurrency('btc')
+                                        setCurrencyimg(bitcoin)
+                                        setCurrencytext("Bitcoin (BTC)")
+                                    }}>
+                                    <img src={bitcoin} className='w-5'/>
+                                    <div className='ms-3'>Bitcoin (BTC)</div>
+                                    </li>
+                                    <li className='flex justify-start items-center px-4 leading-5 text-lg' onClick={()=>{
+                                        setCurrency('eth')
+                                        setCurrencyimg(ethereum)
+                                        setCurrencytext("Ethereum (ETH)")
+                                    }}>
+                                    <img src={ethereum } className='w-5'/>
+                                    <div className='ms-3'>Ethereum (ETH)</div>
+                                    </li>
+                                    <li className='flex justify-start items-center px-4 leading-5 text-lg' onClick={()=>{
+                                        setCurrency('usdterc20')
+                                        setCurrencyimg(tetherEr)
+                                        setCurrencytext("Tether ERC20 (USDTERC20)")
+                                    }}>
+                                    <img src={tetherEr} className='w-5'/>
+                                    <div className='ms-3'>Tether ERC20 (USDTERC20)</div>
+                                    </li>
+                                    <li className='flex justify-start items-center px-4 leading-5 text-lg' onClick={()=>{
+                                        setCurrency('usdttrc20')
+                                        setCurrencyimg(tetherTr)
+                                        setCurrencytext("Tether TRC20 (USDTTRC20)")
+                                    }}>
+                                    <img src={tetherTr} className='w-5'/>
+                                    <div className='ms-3'>Tether TRC20 (USDTTRC20)</div>
+                                    </li>
+                                    <li className='flex justify-start items-center px-4 leading-5 text-lg' onClick={()=>{
+                                        setCurrency('bnbbsc')
+                                        setCurrencyimg(bnb)
+                                        setCurrencytext("BNB smart chain (BNBBSC)")
+                                    }}>
+                                    <img src={bnb} className='w-5'/>
+                                    <div className='ms-3'>BNB smart chain (BNBBSC)</div>
+                                    </li>
+                                    <li className='flex justify-start items-center px-4 leading-5 text-lg' onClick={()=>{
+                                        setCurrency('usdc')
+                                        setCurrencyimg(usdc)
+                                        setCurrencytext("USDC Coin (USDC)")
+                                    }}>
+                                    <img src={usdc} className='w-5'/>
+                                    <div className='ms-3'> USDC Coin (USDC)</div>
+                                    </li>
+                                    <li className='flex justify-start items-center px-4 leading-5 text-lg' onClick={()=>{
+                                        setCurrency('doge')
+                                        setCurrencyimg(dogecoin)
+                                        setCurrencytext("Dogecoin (DOGE)")
+                                    }}>
+                                    <img src={dogecoin} className='w-5'/>
+                                    <div className='ms-3'> Dogecoin (DOGE)</div>
+                                    </li>
+                                    <li className='flex justify-start items-center px-4 leading-5 text-lg' onClick={()=>{
+                                        setCurrency('shib')
+                                        setCurrencyimg(shiba)
+                                        setCurrencytext("Shiba Inu (SHIB)")
+                                    }}>
+                                    <img src={shiba} className='w-5'/>
+                                    <div className='ms-3'>  Shiba Inu (SHIB)</div>
+                                    </li>
+                                    <li className='flex justify-start items-center px-4 leading-5 text-lg ' onClick={()=>{
+                                        setCurrency('sol')
+                                        setCurrencyimg(solana)
+                                        setCurrencytext("Solana (SOL)")
+                                    }}>
+                                    <img src={solana} className='w-5'/>
+                                    <div className='ms-3'>  Solana (SOL)</div>
+                                    </li>
+                                  </ul>
+                                    
+                                </div>
+
+               
+                            </div>
+
                             <div className='mt-4 mb-2'>
                                 <h4 class="text-white text-24 oss-font-family font-medium">
                                     Amount to invest

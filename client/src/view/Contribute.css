@@ -1,3 +1,24 @@
+.dropdown-option{
+  max-height: 200px;
+  overflow-y: scroll;
+  border: 0.1px solid rgba(255, 255, 255,0.7);
+  position:  absolute;
+  display: none;
+}
+.show{
+  display: block !important;
+}
+.dropdown-option ul li{
+  padding: 10px 10px;
+  border-bottom: 0.1px solid rgba(255, 255, 255,0.7);
+  cursor: pointer;
+
+}
+.dropdown-option ul li:hover{
+background: rgba(255, 255, 255,0.6);
+
+}
+
 .input-bordered {
     height: 3rem;
     width: 100%;

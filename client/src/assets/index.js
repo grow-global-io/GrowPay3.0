@@ -39,7 +39,18 @@ import home from './home.png'
 import powerOff from './power.png'
 import coinStack from './coin-stack.png'
 import sideBarlogo from './sidebar-logo.png'
+import bitcoin from './bitcoin.png'
+import bnb from './bnb.png'
+import  dogecoin from './dogecoin.png'
+import ethereum from './ethereum.png'
+import shiba from './shiba.png'
+import solana from './solana.png'
+import tetherEr from './tether.png'
+import tetherTr from './tether1.png'
+import usdc from './usdc.png'
 
 
 
-export { faqImg,logo, twitter, telegram, question, upArrow, downArrow, payOut,lock,speach,inCutPencil, inCutEthereum,workThree ,tokenOne,tokenTow,tokenThree,tokenFour,beneOne,beneTwo,beneThree,deeStream,payout,privacy,ads,logonavbar,token,streaming,logo2x,tokenSymbol,rightArrow,twitterLogo,telegramLogo,logoLight2x,user,trader,transaction,dashboard,home,powerOff,coinStack,sideBarlogo};
+
+
+export { faqImg,logo, twitter, telegram, question, upArrow, downArrow, payOut,lock,speach,inCutPencil, inCutEthereum,workThree ,tokenOne,tokenTow,tokenThree,tokenFour,beneOne,beneTwo,beneThree,deeStream,payout,privacy,ads,logonavbar,token,streaming,logo2x,tokenSymbol,rightArrow,twitterLogo,telegramLogo,logoLight2x,user,trader,transaction,dashboard,home,powerOff,coinStack,sideBarlogo,bitcoin,bnb,dogecoin,ethereum,shiba,solana,tetherEr,tetherTr,usdc};
